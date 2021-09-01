@@ -1,4 +1,3 @@
 ##miasto;kraj;temepartura;timestamp
-Kazimierza Wielka;Polska;15;2021-09-01 14:52:24
 
-
+Kazimierza Wielka;Polska;15;2021-09-01 15:09:58

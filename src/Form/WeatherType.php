@@ -17,7 +17,7 @@ class WeatherType extends AbstractType
             ->add('City', TextType::class)
             ->add('Country', TextType::class)
             ->add('Submit', SubmitType::class, [
-                'attr' => ['class' => 'save']
+                'attr' => ['class' => 'button']
             ])
         ;
     }
