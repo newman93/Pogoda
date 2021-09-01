@@ -31,6 +31,16 @@
         background: linear-gradient(to right, #185a9d, #43cea2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     }
+
+    .info {
+        font-size: 20px;
+    }
+
+    .temperature {       
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+    }
 </style>
 
 <div class="example-wrapper" id="wrapper">
@@ -44,11 +54,13 @@
     {{ form_end(form) }}
 
     <h3>Prognoza</h3>
-    {% if temperature == 'Brak danych' %}
-        Temperatura: {{ temperature }}
-    {% else %}
-        Temperatura: {{ temperature }} &deg;C
-    {% endif %}
+        <p class="info">
+        {% if temperature == 'Brak danych' %}
+            Temperatura: <span class="temperature"> {{ temperature }} </span>
+        {% else %}
+            Temperatura: <span class="temperature"> {{ temperature }} &deg;C </span>
+        {% endif %}
+    </p>
 </div>
 
 
