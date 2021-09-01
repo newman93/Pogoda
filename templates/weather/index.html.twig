@@ -18,9 +18,22 @@
         padding: 50px;
         border-radius: 15px;
     }
+
+    .hot {
+        background: #ED213A;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #93291E, #ED213A);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #93291E, #ED213A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+    .cold {
+        background: #43cea2;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #185a9d, #43cea2);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #185a9d, #43cea2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
 </style>
 
-<div class="example-wrapper">
+<div class="example-wrapper" id="wrapper">
     <h1>Prognoza pogody</h1>
     {{ form_start(form) }}
         {{ form_label(form.City, 'Miasto: ') }}
@@ -37,4 +50,18 @@
         Temperatura: {{ temperature }} &deg;C
     {% endif %}
 </div>
+
+
+<script>
+    let temperature = '{{ temperature }}';
+
+    let element = document.getElementById('wrapper');
+
+    console.log(document.getElementById('wrapper'));
+    if (temperature >= 0) {
+        element.classList.add('hot');
+    } else {
+        element.classList.add('cold');
+    }
+</script>
 {% endblock %}
